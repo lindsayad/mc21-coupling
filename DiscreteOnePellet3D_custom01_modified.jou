@@ -1,0 +1,160 @@
+##
+## Cubit Version 15.1b
+## Cubit Build 395161
+## Revised 2014-10-22 16:12:00 -0600 (Wed, 22 Oct 2014)
+## Running 09/06/2018 12:03:52 PM
+## Command Options:
+reset
+create vertex 0 1.57842 0
+create vertex 0 0.563 0
+create vertex 0.245000408163 0.593 0
+create vertex 0.36 0.593 0
+create vertex 0.41 0.577 0
+create vertex 0.41 -0.577 0
+create vertex 0.36 -0.593 0
+create vertex 0.245000408163 -0.593 0
+create vertex 0 -0.563 0
+create vertex 0 -1.57842 0
+create curve arc center vertex 1 2 3
+curve 1 interval 3
+create curve arc center vertex 10 8 9
+curve 2 interval 3
+create curve vertex 3 4
+curve 3 interval 2
+create curve vertex 4 5
+curve 4 interval 1
+create curve vertex 5 6
+curve 5 interval 4
+create curve vertex 6 7
+curve 6 interval 1
+create curve vertex 7 8
+curve 7 interval 2
+create curve vertex 9 2
+curve 8 interval 4
+create curve vertex 3 8
+curve 9 interval 4
+create surface curve 1 9 2 8
+create curve vertex 4 7
+curve 10 interval 4
+create surface curve 3 10 7 9
+create surface curve 10 6 5 4
+merge volume 1 2 3
+surface 3 2 1 move 0 0.917 0
+set developer commands on
+sweep surface all yaxis angle 180
+set multisweep on
+merge volume 3 2 1
+curve 21 interval 4
+curve 33 interval 1
+curve 31 interval 4
+curve 29 interval 1
+curve 6 interval 1
+curve 30 interval 6
+curve 4 interval 1
+curve 32 interval 6
+volume 3 scheme sweep source surface 14 target 16
+curve 18 interval 2
+curve 15 interval 4
+curve 23 interval 2
+curve 21 interval 4
+curve 7 interval 2
+curve 19 interval 6
+curve 3 interval 2
+curve 22 interval 6
+volume 2 scheme sweep source surface 8 target 10
+curve 13 interval 3
+curve 17 interval 3
+curve 15 interval 4
+curve 2 interval 3
+curve 14 interval 6
+curve 1 interval 3
+curve 16 interval 6
+volume 1 scheme sweep source surface 4 target 6
+mesh volume 3 2 1
+block 3 volume 1 2 3
+block 3 name "pellet_type_1"
+sideset 8 surface 16
+sideset 8 surface 15
+sideset 8 surface 14
+sideset 9 surface 16
+sideset 9 surface 15
+sideset 9 surface 14
+sideset 10 surface 15
+sideset 20 surface 14
+sideset 21 surface 16
+sideset 11 surface 16
+sideset 8 surface 8
+sideset 8 surface 10
+sideset 9 surface 8
+sideset 9 surface 10
+sideset 20 surface 8
+sideset 21 surface 10
+sideset 11 surface 10
+sideset 8 surface 4
+sideset 8 surface 6
+sideset 9 surface 4
+sideset 9 surface 6
+sideset 20 surface 4
+sideset 21 surface 6
+sideset 12 curve 8
+sideset 11 surface 6
+volume all copy reflect z
+merge volume 1 4
+merge volume 2 5
+merge volume 3 6
+block 3 volume 4
+block 3 volume 5
+block 3 volume 6
+block 3 volume 1
+block 3 volume 2
+block 3 volume 3
+sideset 8 surface 30
+sideset 8 surface 29
+sideset 8 surface 28
+sideset 8 surface 23
+sideset 8 surface 25
+sideset 8 surface 18
+sideset 8 surface 20
+sideset 8 surface 4
+sideset 8 surface 6
+sideset 8 surface 8
+sideset 8 surface 10
+sideset 8 surface 14
+sideset 8 surface 15
+sideset 8 surface 16
+sideset 9 surface 30
+sideset 9 surface 29
+sideset 9 surface 28
+sideset 9 surface 23
+sideset 9 surface 25
+sideset 9 surface 18
+sideset 9 surface 20
+sideset 9 surface 4
+sideset 9 surface 6
+sideset 9 surface 8
+sideset 9 surface 10
+sideset 9 surface 14
+sideset 9 surface 15
+sideset 9 surface 16
+sideset 10 surface 29
+sideset 10 surface 15
+sideset 11 surface 30
+sideset 11 surface 25
+sideset 11 surface 20
+sideset 11 surface 6
+sideset 11 surface 10
+sideset 11 surface 16
+sideset 12 surface 29
+sideset 12 surface 15
+nodeset 1020 vertex 9
+nodeset 2000 node 141
+nodeset 1021 vertex 2
+nodeset 3000 vertex 2
+nodeset 1004 vertex 9 2
+nodeset 1005 vertex 2 9
+nodeset 2001 node 9
+nodeset 2002 node 141
+nodeset 2003 node 3
+merge all
+block all element type HEX8
+export mesh "/Users/lindad/projects/moose/modules/heat_conduction/single_pellet.e" dimension 3 block all overwrite
